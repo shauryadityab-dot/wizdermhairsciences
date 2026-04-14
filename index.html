@@ -19,7 +19,12 @@
         <a href="#" class="logo">
           <img src="/Purple-logo.png" alt="Wizderm Logo" height="40" />
         </a>
-        <nav class="nav-links">
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <nav class="nav-links" id="nav-links">
           <a href="#services">Services</a>
           <a href="#results">Results</a>
           <a href="#about">About Us</a>
@@ -367,7 +372,7 @@
             </div>
 
             <!-- Item 3 -->
-            <div class="accordion-item" data-image="/procedure3.jpeg">
+            <div class="accordion-item" data-image="/prp.jpg">
               <button class="accordion-header">
                 <h3>PRP (Platelet-Rich Plasma) Therapy</h3>
                 <span class="icon">+</span>
@@ -397,7 +402,7 @@
               </div>
             </div>
 
-            <div class="accordion-item" data-image="/procedure3.jpeg">
+            <div class="accordion-item" data-image="/GFC.png">
               <button class="accordion-header">
                 <h3>GFC (Growth Factor Concentrate)</h3>
                 <span class="icon">+</span>
@@ -476,151 +481,152 @@
       </div>
     </section>
 
-    <!-- Expanded Why Choose Us Section -->
-    <section id="about" class="about section-padding bg-light">
-      <div class="container">
-        <div class="section-header text-center animate-on-scroll">
-          <h2 class="text-primary">Why Choose Us</h2>
-          <div
-            class="divider text-center"
-            style="
-              height: 4px;
-              width: 60px;
-              background: var(--primary-color);
-              margin: 16px auto;
-            "
-          ></div>
+    <!-- Team Process Section -->
+    <section id="team" class="team-process-section section-padding">
+      <div class="container process-layout">
+        <div class="process-text animate-on-scroll">
+          <h2 class="text-primary text-center">You</h2>
+          <p class="text-center">
+            At Wizderm, hair restoration <strong>isn't a one-person job — it's a team effort.</strong> Our specialists work together to design a natural, safe, and lasting hairline with zero compromise.
+          </p>
+          
+          <div class="process-tabs">
+            <button class="process-tab active" data-target="surgery">Surgery</button>
+            <button class="process-tab" data-target="recovery">Recovery</button>
+          </div>
+          
+          <div class="process-progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 60%;"></div>
+            <div class="progress-markers">
+              <span style="left: 60%; transform: translateX(-50%); position: absolute;">60%</span>
+              <span style="right: 0; position: absolute;">100%</span>
+            </div>
+          </div>
+          
+          <div class="team-images-visuals" style="display: flex; gap: 20px; margin-top: 50px;">
+            <div style="flex: 1; aspect-ratio: 4/3; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+              <img src="/The Team.jpg" alt="Our Expert Team" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <div style="flex: 1; aspect-ratio: 4/3; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+              <img src="/Procedure Room.jpg" alt="State of the Art Procedure Room" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+          </div>
         </div>
 
-        <div class="why-choose-us-grid">
-          <!-- Item 1 -->
-          <div class="wcu-feature animate-on-scroll delay-1">
-            <div class="wcu-icon">
-              <img
-                src="/Surgeon-led-at-each-step-AIIMS-alumnus-MD-Dermatologist-trai.png"
-                alt="Surgeon-led"
-              />
+        <div class="process-card-wrapper animate-on-scroll delay-1">
+          <div class="team-card">
+            <div class="team-card-header">
+              <span class="team-card-title">WHO&#39;S WITH YOU</span>
+              <button class="team-role-toggle">What They Do</button>
             </div>
-            <div class="wcu-text">
-              <h3>Surgeon-Led</h3>
-              <p>
-                Unlike clinics that rely on technicians, every procedure at
-                Wizderm is led by MD Dermatologists. This ensures that your hair
-                restoration is treated as a high-precision medical surgery, not
-                just a cosmetic task.
-              </p>
+            
+            <div class="team-list" id="surgery-team">
+              <div class="team-member">
+                <span class="member-name">MD Dermatologist / Surgeon</span>
+                <div class="member-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                </div>
+              </div>
+              <div class="team-member">
+                <span class="member-name">Anaesthetist</span>
+                <div class="member-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2h2"></path><path d="M12 2v2"></path><path d="M5 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6"></path><path d="M3 6h18"></path></svg>
+                </div>
+              </div>
+              <div class="team-member">
+                <span class="member-name">OT Technicians</span>
+                <div class="member-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                </div>
+              </div>
             </div>
-          </div>
-          <!-- Item 2 -->
-          <div class="wcu-feature animate-on-scroll delay-1">
-            <div class="wcu-icon">
-              <img
-                src="/Minimal-pain-scarring-Minimally-invasive-surgery-ensures-com.png"
-                alt="Minimal pain & scarring"
-              />
-            </div>
-            <div class="wcu-text">
-              <h3>Specialised Hair Restoration Facility</h3>
-              <p>
-                We operate a dedicated ecosystem featuring a state-of-the-art
-                Operating Theatre and a full-time surgical team. By focusing
-                exclusively on hair sciences, we maintain a level of clinical
-                expertise that general dermatology clinics cannot match.
-              </p>
-            </div>
-          </div>
-          <!-- Item 3 -->
-          <div class="wcu-feature animate-on-scroll delay-2">
-            <div class="wcu-icon">
-              <img
-                src="/Hair-restoration–only-clinic-Dedicated-OT-full-time-Surgeon-.png"
-                alt="Hair-restoration clinic"
-              />
-            </div>
-            <div class="wcu-text">
-              <h3>Artistic Natural Hairline Design</h3>
-              <p>
-                We don’t believe in "one size fits all." Our surgeons use facial
-                structure mapping to design a bespoke hairline that complements
-                your age and bone structure, ensuring your results look
-                completely natural from every angle.
-              </p>
+            
+            <div class="team-list hidden" id="recovery-team">
+              <div class="team-member">
+                <span class="member-name">Post-care Coordinator</span>
+                <div class="member-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+              </div>
+              <div class="team-member">
+                <span class="member-name">Reviewing Dermatologist</span>
+                <div class="member-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+              </div>
+               <div class="team-member">
+                <span class="member-name">Hair Wash Assistant</span>
+                <div class="member-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- Item 4 -->
-          <div class="wcu-feature animate-on-scroll delay-2">
-            <div class="wcu-icon">
-              <img
-                src="/We-protect-every-graft.png"
-                alt="We protect every graft"
-              />
+        </div>
+      </div>
+    </section>
+
+    <!-- Expanded Why Choose Us Section -->
+    <section id="about" class="wcu-slider-section section-padding">
+      <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+          <h2>The Wizderm Truth.</h2>
+          <p>
+            Most clinics won't tell you the whole truth. Discover why our "no-compromise" approach is the only way to guarantee a safe, natural, and lasting hair transplant.
+          </p>
+        </div>
+
+        <div class="slider-container animate-on-scroll delay-1" id="wcu-container">
+          <div class="slider-track" id="wcu-slider-track">
+            <!-- Card 1 -->
+            <div class="slider-card">
+              <div class="slider-number"><span class="circle-drawn">1.</span></div>
+              <div class="slider-content">
+                <h3>Surgeon-Led Procedures</h3>
+                <p>Unlike clinics that rely on technicians, every procedure at Wizderm is led by MD Dermatologists—ensuring surgical precision and safety.</p>
+              </div>
             </div>
-            <div class="wcu-text">
-              <h3>Superior "No Root Touch" Technology</h3>
-              <p>
-                Our proprietary technique protects the delicate hair follicles
-                by ensuring they are never handled with sharp instruments. This
-                maximum graft protection leads to significantly higher survival
-                rates and more robust, permanent hair growth.
-              </p>
+            <!-- Card 2 -->
+            <div class="slider-card">
+              <div class="slider-number"><span class="circle-drawn">2.</span></div>
+              <div class="slider-content">
+                <h3>Dedicated Hair Facility</h3>
+                <p>We operate a state-of-the-art Operating Theatre focusing exclusively on hair. This provides clinical expertise general clinics can't match.</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="slider-card">
+              <div class="slider-number"><span class="circle-drawn">3.</span></div>
+              <div class="slider-content">
+                <h3>Natural Hairline Design</h3>
+                <p>Our surgeons map your facial structure to design a bespoke hairline that precisely fits your natural age and bone structure.</p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="slider-card">
+              <div class="slider-number"><span class="circle-drawn">4.</span></div>
+              <div class="slider-content">
+                <h3>"No Root Touch" Tech</h3>
+                <p>Our proprietary techniques guarantee zero handling of roots with sharp instruments, leading to much higher follicle survival rates.</p>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="slider-card">
+              <div class="slider-number"><span class="circle-drawn">5.</span></div>
+              <div class="slider-content">
+                <h3>International Safety</h3>
+                <p>Your safety is non-negotiable. We maintain strict aseptic protocols and vacuum-autoclaved instruments with zero compromises.</p>
+              </div>
+            </div>
+             <!-- Card 6 -->
+            <div class="slider-card">
+              <div class="slider-number"><span class="circle-drawn">6.</span></div>
+              <div class="slider-content">
+                <h3>Transparent Pricing</h3>
+                <p>We offer an all-inclusive, flat-fee philosophy. No hidden OT costs, no surprising follow-up fees—just honest, transparent pricing.</p>
+              </div>
             </div>
           </div>
-          <!-- Item 5 -->
-          <div class="wcu-feature animate-on-scroll delay-3">
-            <div class="wcu-icon">
-              <img
-                src="/Natural-hairlines-that-fit-your-face-Hairline-designed-based-o.png"
-                alt="Natural hairlines"
-              />
-            </div>
-            <div class="wcu-text">
-              <h3>International-Standard Safety Protocols</h3>
-              <p>
-                Your safety is non-negotiable; we maintain a sterile, aseptic
-                environment with vacuum-autoclaved instruments and strict
-                medical guidelines. This "zero-compromise" approach ensures a
-                safe, comfortable experience with minimal risk of infection.
-              </p>
-            </div>
-          </div>
-          <!-- Item 6 -->
-          <div class="wcu-feature animate-on-scroll delay-3">
-            <div class="wcu-icon">
-              <img
-                src="/Transparent-all-inclusive-pricing.png"
-                alt="Transparent pricing"
-              />
-            </div>
-            <div class="wcu-text">
-              <h3>Transparent & All-Inclusive Pricing</h3>
-              <p>
-                We provide a flat-fee philosophy that includes everything from
-                the procedure and OT charges to your post-op care kit and
-                follow-up sessions. With Wizderm, there are no hidden costs—just
-                a clear, honest path to restoring your hair.
-              </p>
-            </div>
-          </div>
-          <!-- Item 7 -->
-          <!-- <div class="wcu-feature animate-on-scroll delay-4">
-            <div class="wcu-icon">
-              <img src="/No-compromise-with-safety-Regular-sterilization-of-OT-and-inst.png" alt="No compromise with safety">
-            </div>
-            <div class="wcu-text">
-              <h3>No compromise with safety</h3>
-              <p>Regular sterilization of OT and instruments, strict aseptic protocol, emergency readiness.</p>
-            </div>
-          </div> -->
-          <!-- Item 8 -->
-          <!-- <div class="wcu-feature animate-on-scroll delay-4">
-            <div class="wcu-icon">
-              <img src="/Post-care-that-stays-with-you.png" alt="Post-care that stays with you">
-            </div>
-            <div class="wcu-text">
-              <h3>Post-care that stays with you</h3>
-              <p>Regular check-ins, head wash guidance, WhatsApp support & timely advice.</p>
-            </div>
-          </div> -->
         </div>
       </div>
     </section>
@@ -1372,6 +1378,12 @@
         </div>
       </div>
     </section>
+
+    <!-- Floating Consultation Button -->
+    <a href="#consultation" id="floating-btn" class="btn btn-primary floating-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+      Book Appointment
+    </a>
 
     <!-- Footer Section -->
     <footer id="contact" class="footer">

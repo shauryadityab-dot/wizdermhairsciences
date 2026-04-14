@@ -92,3 +92,100 @@ if (accordionItems.length) {
     });
   });
 }
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('mobile-menu');
+const navLinksContainer = document.getElementById('nav-links');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+if (menuToggle && navLinksContainer) {
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('is-active');
+    navLinksContainer.classList.toggle('active');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('is-active');
+      navLinksContainer.classList.remove('active');
+    });
+  });
+}
+
+// Floating Button Logic
+const floatingBtn = document.getElementById('floating-btn');
+const heroSection = document.querySelector('.hero');
+
+if (floatingBtn && heroSection) {
+  window.addEventListener('scroll', () => {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    if (window.scrollY > heroBottom - 50) {
+      floatingBtn.classList.add('visible');
+    } else {
+      floatingBtn.classList.remove('visible');
+    }
+  });
+}
+
+// Team Process Tabs Logic
+const processTabs = document.querySelectorAll('.process-tab');
+const progressFill = document.getElementById('progress-fill');
+const teamLists = document.querySelectorAll('.team-list');
+
+if (processTabs.length > 0) {
+  processTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Update active tab
+      processTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      const target = tab.getAttribute('data-target');
+      
+      // Update progress bar
+      if (target === 'surgery') {
+        progressFill.style.width = '60%';
+      } else {
+        progressFill.style.width = '100%';
+      }
+      
+      // Update lists
+      teamLists.forEach(list => list.classList.add('hidden'));
+      document.getElementById(`${target}-team`).classList.remove('hidden');
+    });
+  });
+}
+
+// WCU Auto Slider Logic
+const sliderContainer = document.getElementById('wcu-container');
+const sliderTrack = document.getElementById('wcu-slider-track');
+
+if (sliderContainer && sliderTrack) {
+  let scrollPos = 0;
+  let isHovered = false;
+  
+  sliderContainer.addEventListener('mouseenter', () => isHovered = true);
+  sliderContainer.addEventListener('mouseleave', () => isHovered = false);
+  sliderContainer.addEventListener('touchstart', () => isHovered = true);
+  sliderContainer.addEventListener('touchend', () => { setTimeout(() => isHovered = false, 1500) });
+  
+  // Clone cards for infinite loop effect if enough cards exist
+  const cards = Array.from(sliderTrack.children);
+  cards.forEach(card => {
+    const clone = card.cloneNode(true);
+    sliderTrack.appendChild(clone);
+  });
+
+  setInterval(() => {
+    if (!isHovered) {
+      scrollPos += 1; // scroll speed
+      
+      // If we've scrolled past the first set of cards, instantly reset to beginning
+      if (scrollPos >= sliderTrack.scrollWidth / 2) {
+         scrollPos = 0;
+      }
+      sliderContainer.scrollLeft = scrollPos;
+    } else {
+      scrollPos = sliderContainer.scrollLeft;
+    }
+  }, 20);
+}
