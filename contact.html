@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Wizderm Hair Sciences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .contact-page {
+        padding: 160px 0 100px;
+        background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+        min-height: 100vh;
+      }
+      .contact-form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: var(--bg-white);
+        padding: 48px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border-color);
+      }
+      .form-group {
+        margin-bottom: 24px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-family: var(--font-heading);
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+      .form-group input, 
+      .form-group textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        transition: var(--transition);
+        background: var(--bg-white);
+        color: var(--text-dark);
+      }
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: var(--text-light);
+      }
+      .form-group input:focus, 
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 4px rgba(94, 52, 99, 0.1);
+      }
+      .submit-btn {
+        width: 100%;
+        margin-top: 10px;
+      }
+      @media (max-width: 768px) {
+        .contact-form-container {
+          padding: 32px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <a href="/" class="logo">
+          <img src="/Purple-logo.png" alt="Wizderm Logo" height="40" />
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <nav class="nav-links" id="nav-links">
+          <a href="/#services">Services</a>
+          <a href="/#results">Results</a>
+          <a href="/about.html">About Us</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+        <a href="/#consultation" class="btn btn-primary nav-cta"
+          >Book Consultation</a
+        >
+      </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="contact-page">
+      <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+          <h2 class="text-primary">Contact Us</h2>
+          <p>We’d love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        </div>
+
+        <div class="contact-form-container animate-on-scroll delay-1">
+          <form id="contactForm" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can we help you today?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-brand animate-on-scroll">
+          <a href="/" class="footer-logo"
+            ><img src="/Purple-logo.png" alt="Wizderm Logo" height="40"
+          /></a>
+          <p>
+            The premier hair transplant clinic providing world-class and
+            advanced hair restoration solutions.
+          </p>
+        </div>
+        <div class="footer-links animate-on-scroll delay-1">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#results">Results</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact animate-on-scroll delay-2">
+          <h3>Contact Form</h3>
+          <p>
+            IT 7A, Mani Square, 164/1, Manicktala Main Road, Kadapara, Mall,
+            Kankurgachi, Kolkata, West Bengal 700054
+          </p>
+          <p>contact@wizderm.com</p>
+          <p>+91 800 800 2994</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container animate-on-scroll delay-1">
+          <p>&copy; 2026 Wizderm Hair Sciences. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for contacting us! Your message has been received.');
+        this.reset();
+      });
+    </script>
+  </body>
+</html>
